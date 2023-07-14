@@ -165,11 +165,57 @@
 // Chance de Aprovação
 // https://www.thehuxley.com/problem/1123?quizId=8833
 
-#include <stdio.h>
-int main(){
-    int questions, answers;
-    scanf("%d %d", &questions, &answers);
-    double result = answers/(questions/100);
+// #include <stdio.h>
+// int main(){
+//     double questions, answers, result;
+//     scanf("%lf %lf", &questions, &answers);
+//     result = answers/(questions/100);
+//     if(result < 20)printf("%.2lf%% 4.40%% Pessimo\n", result);
+//     else if(result < 40)printf("%.2lf%% 31.65%% Ruim\n", result);
+//     else if(result < 60)printf("%.2lf%% 56.82%% Bom\n", result);
+//     else if(result < 80)printf("%.2lf%% 80.00%% Muito Bom\n", result);
+//     else if(result < 100)printf("%.2lf%% 94.00%% Excelente\n", result);
+//     return(0);
+// }
 
-    return(0);
-}
+
+// 10º
+// Andando no tempo
+// https://www.thehuxley.com/problem/986?quizId=8833
+
+// #include <stdio.h>
+// int main(){
+//     int num1 , num2, num3;
+//     scanf("%d %d %d", &num1,&num2,&num3);
+//     if(num1 == num2 || num1 == num3 || num2 == num3) printf("S\n");
+//     else if(num1 + num2 == num3 || num1 + num3 == num2 || num2 + num3 == num1) printf("S\n");
+//     else printf("N\n");
+//     return(0);
+// }
+
+// 11º
+// Análise de Crédito
+// https://www.thehuxley.com/problem/1121?quizId=8833
+
+// #include <stdio.h>
+// int main(){
+//     double salario, contas, parcela;
+//     scanf("%lf %lf", &salario, &contas);
+//     parcela = salario * .3 - contas;
+//     if(parcela < 0) parcela = 0;
+//     printf("%.2lf\n", parcela);
+    
+// }
+
+// 12º
+// 2 números em ordem crescente
+// https://www.thehuxley.com/problem/691?quizId=8833
+
+// #include <stdio.h>
+// int main(){
+//     int num1,num2;
+//     scanf("%d %d", &num1, &num2);
+//     if(num1 < num2) printf("%d %d\n", num1,num2);
+//     else printf("%d %d\n", num2, num1);
+// }
+
