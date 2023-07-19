@@ -14,7 +14,6 @@
 //      printf("R$ %.2lf\n", totalPrice);
 //  }
 
-
 // 2º
 // Menor de 3
 // https://thehuxley.com/problem/18?quizId=8833
@@ -61,7 +60,6 @@
 //     return(0);
 // }
 
-
 // 4º
 // Choque Elétrico
 // https://thehuxley.com/problem/1169?quizId=8833
@@ -97,7 +95,6 @@
 //     printf("%d\n", preco);
 //     return(0);
 // }
-
 
 // 6º
 // Conceito MEC
@@ -160,7 +157,6 @@
 //     return(0);
 // }
 
-
 // º9
 // Chance de Aprovação
 // https://www.thehuxley.com/problem/1123?quizId=8833
@@ -177,7 +173,6 @@
 //     else if(result < 100)printf("%.2lf%% 94.00%% Excelente\n", result);
 //     return(0);
 // }
-
 
 // 10º
 // Andando no tempo
@@ -197,15 +192,15 @@
 // Análise de Crédito
 // https://www.thehuxley.com/problem/1121?quizId=8833
 
-// #include <stdio.h>
-// int main(){
-//     double salario, contas, parcela;
-//     scanf("%lf %lf", &salario, &contas);
-//     parcela = salario * .3 - contas;
-//     if(parcela < 0) parcela = 0;
-//     printf("%.2lf\n", parcela);
-    
-// }
+/* #include <stdio.h>
+int main(){
+    double salario, contas, parcela;
+    scanf("%lf %lf", &salario, &contas);
+    parcela = salario * .3 - contas;
+    if(parcela < 0) parcela = 0;
+    printf("%.2lf\n", parcela);
+
+} */
 
 // 12º
 // 2 números em ordem crescente
@@ -219,3 +214,165 @@
 //     else printf("%d %d\n", num2, num1);
 // }
 
+// 13º
+// Aumento dos Trabalhadores
+// https://thehuxley.com/problem/368?quizId=8833
+
+/* #include <stdio.h>
+
+int main()
+{
+  double sal;
+  scanf("%lf", &sal);
+  if (sal > 500)
+    sal *= 1.1;
+  else if (sal > 300)
+    sal *= 1.07;
+  else
+    sal *= 1.05;
+  printf("%.2lf\n", sal);
+} */
+
+/* 14º
+Conta de Água
+https://thehuxley.com/problem/174?quizId=8833 */
+
+/* #include <stdio.h>
+int main(){
+  int consumo, preco = 7;
+  scanf("%d", &consumo);
+  if(consumo > 100) {
+    preco += (consumo - 100) * 5;
+    consumo -= consumo - 100;
+  }
+   if(consumo > 30){
+    preco += (consumo - 30) * 2;
+    consumo -= consumo - 30;
+   }
+   if(consumo > 10){
+     preco += (consumo - 10);
+     consumo -= consumo - 10;
+   }
+  printf("%d\n", preco);
+}
+ */
+
+// 15º
+// Devagar, devagar, olhe o radar!!
+// https://thehuxley.com/problem/564?quizId=8833
+
+/* #include <stdio.h>
+int main(){
+  float velocidade, velocidade_max;
+  scanf("%f %f", &velocidade_max, &velocidade);
+  if(velocidade > velocidade_max * 1.5){
+    printf("574.62\n7");
+  }
+  else if(velocidade > velocidade_max * 1.200001){
+    printf("127.69\n5");
+  }
+  else if(velocidade > velocidade_max){
+    printf("85.13\n4");
+  }
+  else{
+    printf("0.00\n0");
+  }
+} */
+
+/* Se colocar 1.2 da erro no ultimo caso de teste kkkkkkkkk pq ele coloca 1.2 como 1.199999999  */
+
+// 16º
+// Eleitor 
+// https://thehuxley.com/problem/42?quizId=8833
+
+/* #include <stdio.h>
+int main(){
+  int idade;
+  scanf("%d", &idade);
+if(idade < 16) printf("nao eleitor\n");
+else if(idade < 18 || idade > 65) printf("eleitor facultativo\n");
+else printf("eleitor obrigatorio\n");
+return(0);
+} */
+
+/* 17º
+Equação do Segundo Grau
+https://thehuxley.com/problem/6?quizId=8833 */
+
+/* #include <stdio.h>
+#include <math.h>
+int main(){
+  double a,b,c, delta;
+  scanf("%lf %lf %lf", &a, &b, &c);
+  delta = b*b - 4*a*c;
+  if(a == 0) printf("NEESG\n");
+  else if(delta < 0) printf("NRR\n");
+  else printf("%.2lf\n%.2lf\n", (-b + sqrt(delta))/(2*a), (-b - sqrt(delta))/(2*a));
+
+} */
+
+/* 18º
+Igual ou diferente
+https://thehuxley.com/problem/43?quizId=8833 */
+
+/* #include <stdio.h>
+int main(){
+  int num1, num2, num3, resultado = 2;
+  scanf("%d %d %d", &num1, &num2, &num3);
+  if(num1 == num2 && num2 == num3 ) resultado = 1;
+  else if(num1 == num2 || num1 == num3 || num2 == num3) resultado = 3;
+  printf("%d\n", resultado);
+} */
+
+/* 19º
+Ingresso no Cinema
+https://thehuxley.com/problem/510?quizId=8833 */
+
+/* #include <stdio.h>
+int main(){
+  int estudante, idoso;
+  scanf("%d %d", &estudante, &idoso);
+  if(estudante == 1 || idoso == 1) printf("1\n");
+  else printf("0\n");
+  return(0);
+}
+ */
+/* 20º
+Preço da Gasolina
+https://thehuxley.com/problem/1532?quizId=8833 */
+/* #include <stdio.h>
+int main(){
+  double litros, preco;
+  char tipo;
+  scanf("%lf %c", &litros, &tipo);
+  if(tipo == 'A'){
+    if(litros <= 20) preco = 1.9 * 0.97 * litros;
+    else preco = 1.9 * 0.95 * litros;
+  }
+  else if(tipo == 'G'){
+    if(litros <= 20) preco = 2.5 * 0.96 * litros;
+    else preco = 2.5 * 0.94 * litros;
+  }
+  else{
+    if(litros > 25) preco = 1.66 * 0.96 * litros;
+    else preco = 1.66 * litros;
+  }
+  printf("R$ %.2lf\n", preco);
+  return(0);
+} */
+
+/* 21º
+Aumento condicional
+https://thehuxley.com/problem/1524?quizId=8833 */
+
+/* #include <stdio.h>
+int main(){
+  double salario, aumento, percentual;
+  scanf("%lf", &salario);
+  if(salario <= 280) percentual = 20;
+  else if( salario <= 700) percentual = 15;
+  else if( salario < 1500) percentual = 10;
+  else percentual = 5;
+  printf("%.2lf\n%.0lf\n%.2lf\n%.2lf", salario, percentual, salario * percentual/100, salario + salario * percentual/100);
+  return(0);
+} */
