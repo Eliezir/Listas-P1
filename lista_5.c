@@ -3,7 +3,7 @@
 /* Abaixo a poluição
 https://thehuxley.com/problem/396/code-editor/?quizId=8837 */
 
-/* #include <stdio.h>
+#include <stdio.h>
 
 int contadorDeMultas(int multas, double valor){
     int carros;
@@ -24,13 +24,13 @@ int main(){
 
     contadorDeMultas(0,0);
     return 0;
-} */
+} 
 
 /* 
 Descontos Black Friday
 https://thehuxley.com/problem/468?quizId=8837 */
 
-/* #include <stdio.h>
+#include <stdio.h>
 
 
 int pegaPreco(double precos[], int contador, int blackFriday){
@@ -44,13 +44,13 @@ int main(){
     double precos[10];
     printf("%d\n", pegaPreco(precos, 0, 0));
     return 0;
-} */
+} 
 
 
 /* 3n +1
 https://thehuxley.com/problem/407?quizId=8837 */
 
-/* #include <stdio.h>
+#include <stdio.h>
 
 
 
@@ -78,13 +78,13 @@ int input(){
 int main(){
     input();
     return 0;
-} */
+} 
 
 
 /* Árvore de Natal
 https://thehuxley.com/problem/490?quizId=8837 */
 
-/* #include <stdio.h>
+ #include <stdio.h>
 
 
 int main(){
@@ -94,13 +94,13 @@ int main(){
     precoTotal = arvore + ornamentos[0]*ornamentos[1] + ornamentos[2]*ornamentos[3] + ornamentos[4]*ornamentos[5];
     printf("%.2lf\n%.2lf\n", precoTotal, precoTotal/21.0);
 
-} */
+} 
 
 
 // Foto de Família
 // https://thehuxley.com/problem/50?quizId=8837
 
-/* #include <stdio.h>
+ #include <stdio.h>
 
 int print(double ordem[], int contador){
     printf("%.2lf\n", ordem[contador]);
@@ -155,13 +155,13 @@ int main()
     ordenar(alturas, ordem, 2);
     ordenar(alturas, ordem, 3);
     return 0;
-} */
+}
 
 
 // Conta Múltiplos
 // https://thehuxley.com/problem/398?quizId=8837
 
-/* #include <stdio.h>
+#include <stdio.h>
 int ehMultiplo(int n1, int n2, int contador){
     if(n1 * contador % n2 == 0){
         return (49/(n1*contador)) > 0 ? (49/(n1*contador)) : (49/(n1*contador)) * -1;
@@ -180,15 +180,14 @@ int main(){
         1
     );
     printf("%d\n", contador);
-} */
+}
 
 
 
 // Desafio do maior número
 // https://thehuxley.com/problem/224?quizId=8837
 
-/* #include <stdio.h>
-
+#include <stdio.h>
 int contador(int maior){
     int num;
     scanf("%d", &num);
@@ -198,13 +197,13 @@ int contador(int maior){
 
 int main(){
 printf("%d\n", contador(0));
-} */
+} 
 
 
 // Elevador
 // https://thehuxley.com/problem/180?quizId=8837
 
-/* #include <stdio.h>
+#include <stdio.h>
 int elevador(int contador, int capacidade, int pessoas, int excedeu){
 int entrada, saida;
 scanf("%d%d", &saida,  &entrada);
@@ -220,4 +219,94 @@ int leituras, capacidade, excedida;
 scanf("%d%d", &leituras, &capacidade);
 excedida = elevador(leituras, capacidade, 0, 0 );
 excedida == 1 ? printf("S\n") : printf("N\n");
-} */
+}
+
+
+/* Cálculo de Série
+https://thehuxley.com/problem/1114/submission/3127310?quizId=883 */
+
+#include <stdio.h>
+
+double serie(int num, double triangulo, double quadrado, double bola, int contador, double output){
+    if(contador > num) return output;
+    if(contador %2 == 0) {
+        output += quadrado/bola;
+        quadrado *= 2;
+        bola += 3;
+    }
+    else {
+        output += triangulo/quadrado;
+        triangulo += 2;
+        quadrado *= 2;
+    }
+    return serie(num, triangulo, quadrado, bola, contador + 1, output);
+}
+
+
+int main(){
+    int num;
+    scanf("%d", &num);
+    printf("S: %.2lf\n", serie(num, 1, 1, 3, 1, 0));
+}
+
+// Calculadora de Imposto Totais
+//  https://thehuxley.com/problem/574?quizId=8837
+
+#include <stdio.h>
+
+int main(){
+    double cotacao, aliquota, produtoDol, freteDol;
+    scanf("%lf%lf%lf%lf", &cotacao, &aliquota, &produtoDol, &freteDol);
+    double produtoReal = produtoDol * cotacao;
+    double freteReal = freteDol * cotacao;
+    int isento =  produtoDol >= 2500 ? 1 : 0;
+    double impostoImportacao = (isento ? produtoReal : freteReal + produtoReal) * 0.6;
+    double icms = (isento ? produtoReal : freteReal + produtoReal ) * 1.6  / (1 - aliquota/100) * (aliquota/100);
+    printf("%.2lf\n", cotacao);
+    printf("%.2lf\n", produtoReal);
+    printf("%.2lf\n", freteReal);
+    printf("%.2lf\n", freteReal + produtoReal);
+    printf("%.2lf\n", impostoImportacao);
+    printf("%.2lf\n", icms);
+    printf("%.2lf\n", icms + impostoImportacao);
+    printf("%.2lf\n",(freteReal + produtoReal + icms + impostoImportacao ));
+    isento  ? printf("Impostos calculados sem o frete\n") : printf("Impostos calculados com o frete\n");
+}
+
+// Preço dos Jogos
+// https://thehuxley.com/problem/341?quizId=8837
+
+#include <stdio.h>
+
+int print(double jogos[], int qntd, int contador){
+    printf("Jogo[%d] = R$%.2lf\n", contador, jogos[contador]);
+    if(contador == qntd -1 ) return 0;
+    return print(jogos, qntd, contador + 1);
+}
+
+double calculaDesconto(int nivel, double precoInicial, int anos){
+  double descontos[6] = {25, 20, 18, 15, 12, 10};
+  double precoDesconto;
+  precoDesconto = precoInicial * (1 - descontos[nivel] / (precoInicial <= 100 ? 200 : 100) );
+  if(precoDesconto < 45) precoDesconto = precoInicial < 45 ? precoInicial : 45;
+  if(anos == 3) return precoDesconto;
+  return calculaDesconto(nivel, precoDesconto, anos + 1 );
+}
+
+int precoJogos(double jogos[], int qntd, int contador){
+    if(contador == qntd) return print(jogos, qntd, 0);
+    int nivel;
+    double preco;
+    scanf("%d%lf", &nivel, &preco);
+    jogos[contador] = calculaDesconto(nivel, preco, 1);
+    return precoJogos(jogos, qntd, contador + 1 );
+}
+
+
+int main(){
+    int qntdJogos;
+    scanf("%d", &qntdJogos);
+    double jogos[qntdJogos];
+    precoJogos(jogos, qntdJogos, 0);   
+    return 0;
+}
